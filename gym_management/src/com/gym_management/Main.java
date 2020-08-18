@@ -69,7 +69,7 @@ public class Main extends Application {
                     try {
                         launch(args);
                     }catch (Exception e){
-                        System.out.println();
+                        System.out.println("Sorry you can only run GUI once");
                     }
                     break;
                 case "quit":
@@ -131,12 +131,12 @@ public class Main extends Application {
         System.out.println();
         System.out.println("Type the following commands to delete ");
         System.out.println("\t* Delete by member number in system => SYSTEM");
-        System.out.println("\t* Delete by member number in database => BACKUP");
+        System.out.println("\t* Delete by member number in database => DATABASE");
         System.out.println("\t* Go back => BACK");
         System.out.println("------------------------------------------------------------------");
 
         // Getting Input, verifying and continuing
-        String deleteCommand=Verifiers.commandVerification("system", "backup","back");
+        String deleteCommand=Verifiers.commandVerification("system", "database","back");
 
         MyGymManager managerDeleteFunction = new MyGymManager();
 
@@ -144,7 +144,7 @@ public class Main extends Application {
             case "system":
                 managerDeleteFunction.deleteObjectsInSystem();
                 break;
-            case "backup":
+            case "database":
                 managerDeleteFunction.deleteObjectsInDatabase();
                 break;
             case "back":
@@ -163,12 +163,12 @@ public class Main extends Application {
         System.out.println();
         System.out.println("Type the following commands to print specific members ");
         System.out.println("\t* Print member's details in the system  => SYSTEM");
-        System.out.println("\t* Print member's details in the database => BACKUP");
+        System.out.println("\t* Print member's details in the database => DATABASE");
         System.out.println("\t* Go back => BACK");
         System.out.println("------------------------------------------------------------------");
 
 //        Getting Input, verifying and continuing
-        String printCommand=Verifiers.commandVerification("system","backup","back");
+        String printCommand=Verifiers.commandVerification("system","database","back");
         System.out.println();
 
         MyGymManager managerPrintFunction = new MyGymManager();
@@ -177,7 +177,7 @@ public class Main extends Application {
             case "system":
                 managerPrintFunction.printObjectsInSystem();
                 break;
-            case "backup":
+            case "database":
                 managerPrintFunction.printObjectsInDatabase();
                 break;
             case "back":
@@ -232,13 +232,13 @@ public class Main extends Application {
         System.out.println();
         System.out.println("Type the following commands to save specific members ");
         System.out.println("\t* Sort members details in the system => SYSTEM");
-        System.out.println("\t* Sort members details in the backup => BACKUP");
+        System.out.println("\t* Sort members details in the backup => DATABASE");
         System.out.println("\t* Go back => BACK");
         System.out.println("------------------------------------------------------------------");
 
 
         // Getting Input, verifying and continuing
-        String sortCommand=Verifiers.commandVerification("system", "backup", "back");
+        String sortCommand=Verifiers.commandVerification("system", "database", "back");
         System.out.println();
 
         MyGymManager managerSortFunction = new MyGymManager();
@@ -246,7 +246,7 @@ public class Main extends Application {
         switch (sortCommand) {
             case "system":
                 managerSortFunction.sortObjectsInSystem();
-            case "backup":
+            case "database":
                 managerSortFunction.sortObjectsInDatabase();
                 break;
             case "back":

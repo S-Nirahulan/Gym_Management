@@ -125,7 +125,7 @@ public class MyGymManager implements GymManager {
                             over60MemberList.remove(over60Member);
                         }
                     }
-                    
+
                 }else{
                     System.out.println("Don't worry data is still available in system");
                 }
@@ -191,12 +191,6 @@ public class MyGymManager implements GymManager {
                 System.out.println();
             }
         }
-
-        // To inform the user how many members user can add
-        System.out.println("------------------------------------------------------------------");
-        System.out.println("\t* Available space : "+(100-defaultMemberList.size()));
-        System.out.println("\t* Stored Members  : "+defaultMemberList.size());
-        System.out.println("------------------------------------------------------------------");
     }
 //====================================== Print data in backup ==========================================================
 
@@ -211,16 +205,12 @@ public class MyGymManager implements GymManager {
             int memNo = (int) document.get("_id");
             String startedDate = (String) document.get("Started Date");
             String memType = (String) document.get("Membership Type");
-            String pack = (String) document.get("Package");
-
 
             System.out.println(" Member's name :"+ name);
             System.out.println(" Membership type :"+memType);
             System.out.println(" Membership starting date :"+startedDate);
             System.out.println(" Member's number :"+memNo);
-            System.out.println(" Member's package :"+pack);
             System.out.println();
-
         }
     }
 
@@ -237,7 +227,6 @@ public class MyGymManager implements GymManager {
         for (Over60Member over60Member: over60MemberList) {
             Database.over60DataBase(over60Member);
         }
-        System.out.println("Member's details are saved in database");
     }
 
     @Override
@@ -287,12 +276,6 @@ public class MyGymManager implements GymManager {
                 System.out.println();
             }
         }
-
-        // To inform the user how many members user can add
-        System.out.println("------------------------------------------------------------------");
-        System.out.println("\t* Available space : "+(100-defaultMemberList.size()));
-        System.out.println("\t* Stored Members  : "+defaultMemberList.size());
-        System.out.println("------------------------------------------------------------------");
     }
 
     @Override

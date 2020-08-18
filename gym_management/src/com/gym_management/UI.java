@@ -35,11 +35,6 @@ public class UI {
             memTypeColumn.setMinWidth(200);
             memTypeColumn.setCellValueFactory(new PropertyValueFactory<>("memberType"));
 
-        // Column for Membership number
-        TableColumn<DefaultMember,String> packColumn = new TableColumn<>("Package");
-            packColumn.setMinWidth(200);
-            packColumn.setCellValueFactory(new PropertyValueFactory<>("userPackage"));
-
         defaultMemberTableView = new TableView<>();
 
         TextField nameSearchField = new TextField();
@@ -64,11 +59,10 @@ public class UI {
         memNoSearchBtn.setLayoutX(370);
         memNoSearchBtn.setLayoutY(430);
 
-
         // Setting items from observable list which have DefaultMember objects
         defaultMemberTableView.setItems(MyGymManager.observableList());
 
-        defaultMemberTableView.getColumns().addAll(nameColumn,memNoColumn,startDateColumn,memTypeColumn,packColumn);
+        defaultMemberTableView.getColumns().addAll(nameColumn,memNoColumn,startDateColumn,memTypeColumn);
 
         nameSearchBtn.setOnAction(event -> {
             String memberName = nameSearchField.getText().trim().toLowerCase();
@@ -80,7 +74,12 @@ public class UI {
         });
 
         memNoSearchBtn.setOnAction(event -> {
-            int memberNo = Integer.parseInt(memNoSearchField.getText().trim());
+            int memberNo=0;
+            try {
+                memberNo = Integer.parseInt(memNoSearchField.getText().trim());
+            }catch(NumberFormatException e){
+                defaultMemberTableView.setItems(MyGymManager.observableList());
+            }
             if (!memNoSearchField.getText().trim().isEmpty()) {
                 defaultMemberTableView.setItems(searchAlgorithm(MyGymManager.observableList(), memberNo));
             }else{

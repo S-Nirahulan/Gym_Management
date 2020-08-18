@@ -56,12 +56,12 @@ public class Database {
                 // "_id" is primary key for the collection. So it have to be unique for each document.
                 .append("_id",defaultMember.getMemberNo())
                 .append("Name",defaultMember.getName())
-                .append("Member",defaultMember.getMemberNo())
                 .append("Started Date", defaultMember.getStartMemDate())
                 .append("Membership Type",defaultMember.getMemberType());
 
         try {
             defaultMemberCollection.insertOne(defaultMemberDocument);
+            System.out.println("Member's details are saved in database");
         }catch (com.mongodb.MongoWriteException e){
             // Informing the user which member already in the data base
             System.out.println("Invalid, Inserted details already exist!");
@@ -80,6 +80,7 @@ public class Database {
 
         try {
             studentMemberCollection.insertOne(studentMemberDocument);
+            System.out.println("Member's details are saved in database");
         }catch (com.mongodb.MongoWriteException e){
             // Informing the user which member already in the data base
             System.out.println("Invalid, Inserted details already exist!");
@@ -97,6 +98,7 @@ public class Database {
 
         try {
             over60MemberCollection.insertOne(over60MemberDocument);
+            System.out.println("Member's details are saved in database");
         }catch (com.mongodb.MongoWriteException e){
             // Informing the user which member already in the data base
             System.out.println("Invalid, Inserted details already exist!");
@@ -119,6 +121,7 @@ public class Database {
         ArrayList <Document> list = new ArrayList<>();
         for (Document document : iter) {
             list.add(document);
+            document.get("Name");
         }
         return list;
     }

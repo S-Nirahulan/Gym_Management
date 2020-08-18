@@ -125,17 +125,17 @@ public class Date {
         if (!invalid) {
             date = Integer.parseInt(fullDate.substring(0, 2));
             if (getMonth() == 1 || getMonth() == 3 || getMonth() == 5 || getMonth() == 7 || getMonth() == 8 || getMonth() == 10 || getMonth() == 12) {
-                invalid = date <= 0 || date > 31;
+                invalid = date < 1 || date > 31;
             }
             // Leap year
             else if (getMonth() == 2) {
                 if (getYear() % 4 == 0) {
-                    invalid = date <= 0 || date > 29;
-                } else {
-                    invalid = date <= 0 || date > 28;
+                    invalid = date < 1 || date > 29;
+                } else if (getYear() % 4 != 0) {
+                    invalid = date < 1 || date > 28;
                 }
             } else if (getMonth() == 4 || getMonth() == 6 || getMonth() == 9 || getMonth() == 11) {
-                invalid = date <= 0 || date > 30;
+                invalid = date < 1 || date > 30;
             }
             if (!invalid){
                 setDate(date);
