@@ -2,9 +2,7 @@
 ### Gym management program created in Java and MongoDB
 
 Program is created for academic purposes.
-The requirements are 
-1)Create console view gym management program in java.  
-2)Members table view (GUI)
+The requirements are create console view gym management program in java and Members table view (GUI)
 ### Print Details
 Member's details are printable.
 Member's can be printed in sorted order (based on member's name) as well.
