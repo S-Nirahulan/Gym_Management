@@ -1,4 +1,4 @@
-package com.gym;
+package gym_manager;
 
 import com.mongodb.MongoClient;
 import com.mongodb.MongoClientException;
@@ -12,8 +12,8 @@ import java.util.logging.Logger;
 // import com.mongodb.MongoCredential;
 
 
-public class Database {
 //============================================= Connecting to the database =============================================
+public class Database {
     // Every time appending or retrieving data, we have to connect to database
     // We can return database from method because of external library
     public static MongoDatabase database() {

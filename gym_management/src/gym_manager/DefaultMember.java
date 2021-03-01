@@ -1,4 +1,4 @@
-package com.gym;
+package gym_manager;
 
 public class DefaultMember implements Comparable<DefaultMember> {
     // Encapsulation

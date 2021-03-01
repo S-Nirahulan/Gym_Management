@@ -1,4 +1,4 @@
-package com.gym;
+package gym_manager;
 
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
@@ -13,6 +13,7 @@ import java.util.*;
 public class MyGymManager implements GymManager {
     Date date =new Date();
 
+//==================================================== Delete ==========================================================
     // Interface method (Interface : GymManager)
     // The following method is used to add default member
     @Override
@@ -84,7 +85,7 @@ public class MyGymManager implements GymManager {
         }
     }
 
-//====================================== Delete System =================================================================
+//============================================= Delete =================================================================
     // Interface method (Interface : GymManager)
     // The following method is used to delete already added member by their membership number
     // User can delete the same member object in data base as well
@@ -138,7 +139,7 @@ public class MyGymManager implements GymManager {
         System.out.println("\t* Stored Members  : "+defaultMemberList.size());
         System.out.println("------------------------------------------------------------------");
     }
-//================================================= Delete backup ======================================================
+
     @Override
     public void  deleteObjectsInDatabase(){
         System.out.println("You can now delete members in the system by their membership number!!!");
@@ -225,7 +226,7 @@ public class MyGymManager implements GymManager {
         }
     }
 
-//=========================================== Saving in database =======================================================
+//================================================= Saving =============================================================
     @Override
     public void saveInDatabase() {
 

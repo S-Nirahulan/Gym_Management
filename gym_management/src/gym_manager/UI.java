@@ -1,4 +1,4 @@
-package com.gym;
+package gym_manager;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;

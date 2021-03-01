@@ -1,4 +1,4 @@
-package com.gym;
+package gym_manager;
 
 // Subclass for DefaultMember
 // extends used to inherit variables and methods to this class from DefaultMember class

@@ -1,4 +1,4 @@
-package com.gym;
+package gym_manager;
 
 import javafx.application.Application;
 import javafx.scene.Scene;

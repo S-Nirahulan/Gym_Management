@@ -1,4 +1,4 @@
-package com.gym;
+package gym_manager;
 
 // Sub class of the DefaultMember class
 public class Over60Member extends DefaultMember {
